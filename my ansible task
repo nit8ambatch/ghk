@@ -1,0 +1,85 @@
+ vim /etc/ansible/hosts - all servers{main,dev,test}
+    2  vim /etc/ssh/sshd_config
+    3  systemctl restart sshd
+    4  systemctl status sshd
+    5  amazon-linux-extras install ansible2 -y
+    6  yum install git python-pip openssl -y
+    7  clear
+    8  ansible --version
+    9  vim /etc/ansible/hosts
+   10  vim /etc/ansible/ansible.cfg
+   11  visudo -{all servers ansible ALL=(ALL) NOPASSWD: ALL
+   12  ssh root@dev private i.p
+   13  ssh root@test private i.p
+   14  clear
+   15  ansible all -m ping
+   18  ssh-keygen
+   19  cd .ssh for all server{main}
+       cd .ssh (nano authorized_key) for dev
+       cd .ssh (nano authorized_key) for test
+   20  cat id_rsa.pub
+   21  cd
+   22  ansible all -m ping
+   23  clear
+   24  ansible all -a "yum install java-1.8.0-openjdk -y"
+   25  vi playbook.yml
+   - hosts: all
+  vars:
+    a: tree
+    b: docker
+  tasks:
+    - name: task-1
+      yum: name={{a}} state=present
+      yum: name={{b}} state=present
+...
+   26  ansible-playbook playbook.yml
+  
+  27  vi sample.yml
+  [ - hosts: all
+  tasks:
+    - name: task-1
+      yum: name={{item}} state=present
+      with_items:
+        - git
+        - maven
+        - docker
+        - httpd
+        - tree
+        - java-1.8.0-openjdk
+...]
+
+   28  ansible-playbook sample.yml
+   
+   29  vi ansible.yml
+   [- hosts: dev
+  tasks:
+    - name: INSTALLING JAVA ON REDHAT
+      command: yum install java-1.8.0-openjdk -y
+      when: ansible_os_family == "RedHat"
+...]      
+
+   30  ansible-playbook ansible.yml
+  
+  31  vi ansible.yml
+  
+   32  ansible-playbook ansible.yml
+   33  vi amazon.yml
+   [- hosts: all
+    tasks:
+    - name: COPYING THE CONTENT
+      copy:
+        dest: "file.txt"
+        content: |
+          HAI ALL]
+ 34  ansible-playbook amazon.yml
+  
+  35  vi naveen.yml
+    - hosts: all
+  tasks:
+    - name: INSTALLING HTTPD
+      command: yum install httpd -y
+
+    - name: RESTARTING HTTPD
+      command: systemctl restart httpd
+...
+   36  ansible-playbook naveen.yml
