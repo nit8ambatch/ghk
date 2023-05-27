@@ -1,0 +1,66 @@
+ yum update -y
+    3  yum install docker -y
+    4  docker --version
+    5  docker images
+    6  docker version
+    7  docker images
+    8  yes
+    9
+   10  clear
+   11  docker serach images
+   12  docker serach ubuntu
+   13  docker pull ubuntu
+   14  ssytemctl start doker
+   15  systemctl start doker
+   16  systemctl start docker
+   17  systemctl status docker
+   18  docker version
+   19  docker images
+   20  docker search ubuntu
+   21  docker pull ubuntu
+   22  docker images
+   23  docker run ubuntu
+   24  docker ps -a
+   25  docker run --name hemanth ubuntu
+   26  docker ps -a
+   27  docker run -it --name naveen ubuntu
+   28  ls os-release
+   29  lsb_release
+   30  docker run -it --name naveen ubuntu
+   31  docker run -it --name naveen1 ubuntu
+   32  docker run -itd --name naveen1 ubuntu
+   33  docker run -itd --name likki ubuntu
+   34  docker ps -a
+   35  docker attach naveen1
+   36  docker start naveen1
+   37  docker attach naveen1
+   38  docker start naveen
+   39  docker ps
+   40  docker run -it --name lucky ubuntu /bin/bash
+   41  docker ps -a
+   42  docker rm ed67e23591a5
+   43  docker rm ed67e23591a5
+   44  docker stop likki
+   45  docker rm ed67e23591a5
+   46  docker stop naveen1
+   47  docker rm 37b3a03c586b
+   48  ll
+   49  docker ps
+   50  docker ps -a
+   51  docker run -it --name cont1 ubuntu
+   52  docker ps -a
+   53  docker images
+   54  docker commit
+   55  docker commit 54a8bc350e67 raham1
+   56  docker images
+   57  hustory
+   58  history
+   59  docker run -it --name cont1 ubuntu
+   60  docker run -it --name cont1 raham1
+   61  docker commit 54a8bc350e67 raham1
+   62  docker images
+   63  docker run -it --name cont2 raham1
+apt update -- it will print just packages
+apt upgrade -- it will print only updates 
+apt install -- to show progress
+apt-get -- it doesn't show progress
